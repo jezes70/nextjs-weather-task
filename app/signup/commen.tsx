@@ -1,12 +1,12 @@
 export const styling1 = {
-  backgroundImage: `url('/weath.jpg')`,
+  backgroundImage: `url('/weather-wind-r.jpeg')`,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
   backgroundSize: "cover",
 };
 
 export const styling2 = {
-  backgroundImage: `url('/weath.jpg')`,
+  backgroundImage: `url('/public/weather-wind.jpeg')`,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
   backgroundSize: "cover",
