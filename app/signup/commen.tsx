@@ -19,5 +19,5 @@ export const overlayStyle = {
   right: 0,
   bottom: 0,
   left: 0,
-  background: "rgba(255, 255, 255, 0.3)", // Adjust the opacity as needed
+  background: "rgba(255, 255, 255, 0.3)", 
 };
