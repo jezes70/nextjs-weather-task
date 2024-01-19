@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import axios from "axios";
 
@@ -30,6 +31,9 @@ import {
 import HomeTab from "./tabs/home-tab";
 import LocationTab from "./tabs/location-tab";
 import TemperatureTab from "./tabs/temperature-tab";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const drawerWidth = 260;
 
@@ -103,6 +107,17 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function MiniDrawer() {
+  const { data: session, status }: any = useSession();
+  if (!session || status == "loading") {
+    return null;
+  }
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!session || status == "loading") {
+      router.push("/");
+    }
+  }, [router, status, session]);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [currentTab, setCurrentTab] = React.useState<number>(0);

@@ -31,7 +31,7 @@ export const resolvers = {
           },
         });
         if (password !== confirmPassword)
-          throw new Error("Password and Confirm Password  do not match");
+          throw new Error("Password and Confirm Password is not the same");
         if (existingUser) throw new Error("User already exists ");
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = await prisma.user.create({
